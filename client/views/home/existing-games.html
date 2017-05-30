@@ -1,0 +1,12 @@
+<template name="ExistingGames">
+  {{# each games }}
+    <h2>
+      <a href="#" data-toggle="modal" data-target="#ExistingGameModal{{_id}}">
+        {{ title }}
+      </a>
+      <small>({{ players.length }}/{{ numPlayers }})</small>
+    </h2>
+    <hr>
+    {{> ExistingGameModal }}
+  {{/ each }}
+</template>

@@ -1,0 +1,38 @@
+<template name="BankModal">
+  <div class="modal fade" id="BankModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="myModalLabel">Bank</h3>
+        </div>
+        <div class="modal-body">
+          <h4>Transactions</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>To</th>
+                <th>From</th>
+                <th>Amount</th>
+                <th>Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{# each transactions }}
+              <tr class="{{#if playerGain}}success{{else}}danger{{/if}}">
+                <td>{{ to }}</td>
+                <td>{{ from }}</td>
+                <td>{{ amount }}</td>
+                <td>{{ reason }}</td>
+              </tr>
+            {{/ each }}
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          {{> BankModalButtons }}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

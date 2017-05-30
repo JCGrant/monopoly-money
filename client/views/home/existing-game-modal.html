@@ -1,0 +1,23 @@
+<template name="ExistingGameModal">
+  <div class="modal fade" id="ExistingGameModal{{_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="myModalLabel">{{ title }}</h3>
+        </div>
+        <div class="modal-body">
+          <ul>
+          {{# each players }}
+            <li>{{ name }}</li>
+          {{/ each }}
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Join</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
